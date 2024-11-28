@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lagrange Interpolation in Temperature Estimation</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Lagrange Interpolation for Temperature Estimation</h1>
+  </header>
+  
+  <div class="container">
+    <section>
+      <h2>About Lagrange Interpolation</h2>
+      <p>
+        The Lagrange interpolation method is used to estimate the value of a function based on known data points. This technique is particularly useful in scenarios where data points are sparse, allowing for smooth transitions between them.
+      </p>
+    </section>
+    
+    <section>
+      <h2>Example: Temperature Estimation</h2>
+      <p>
+        Given temperature readings at specific times of the day, we can use Lagrange interpolation to estimate the temperature at other times.
+      </p>
+      <h3>Sample Data Points:</h3>
+      <ul>
+        <li>8 AM: 15°C</li>
+        <li>12 PM: 25°C</li>
+        <li>4 PM: 20°C</li>
+        <li>8 PM: 16°C</li>
+      </ul>
+    </section>
+    
+    <div class="input-section">
+      <h2>Input Your Temperature Data</h2>
+      
+      <label>Enter x-coordinates (time in hours, e.g., 8, 12, 16, 20):</label>
+      <input type="text" id="xValues" placeholder="e.g., 8, 12, 16, 20">
+      
+      <label>Enter y-coordinates (temperature in °C, e.g., 15, 25, 20, 16):</label>
+      <input type="text" id="yValues" placeholder="e.g., 15, 25, 20, 16">
+      
+      <label>Calculate temperature for a specific time:</label>
+      <input type="text" id="specificX" placeholder="Enter time (e.g., 10)">
+      
+      <button onclick="calculateLagrange()">Calculate</button>
+    </div>
+    
+    <div class="output-section">
+      <h2>Output</h2>
+      <p id="polynomial"></p>
+      <p id="specificY"></p>
+      <canvas id="lagrangeChart" width="400" height="200"></canvas>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
